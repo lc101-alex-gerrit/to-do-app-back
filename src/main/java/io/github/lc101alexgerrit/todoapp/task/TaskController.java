@@ -17,7 +17,6 @@ public class TaskController {
         return taskRepository.findAll();
     }
 
-
     @GetMapping("/task/{id}")
     public Task getTaskById(@PathVariable long id) {
         return taskRepository.findById(id);
@@ -26,6 +25,16 @@ public class TaskController {
     @PostMapping("/task")
     public Task addNewTask(@RequestBody @Valid Task task) {
         return taskRepository.save(task);
+    }
+
+    @PutMapping("/task/{id}")
+    public Task updateTask(@PathVariable Long id, @RequestBody @Valid Task task) {
+        return taskRepository.save(task);
+    }
+
+    @DeleteMapping("/task/{id}")
+    public void deleteTask(@PathVariable Long id) {
+        taskRepository.deleteById(id);
     }
 
 }
