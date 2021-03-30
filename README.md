@@ -54,12 +54,11 @@
     - `id`
     - `title`
     - `description`
-    - `isDone`
   - new Java interface `TaskRepository`
   - new Java class `TaskController`
     - `@GetMapping` to `getTaskById()`
       ```
-      INSERT INTO task (id, title, description, is_done) VALUES (1,"First Task","Very important do not forget to do this!",FALSE);
+      INSERT INTO task (id, title, description) VALUES (1,"First Task","Very important do not forget to do this!");
       ```
     - `@PostMapping` to `addNewTask()`
 
